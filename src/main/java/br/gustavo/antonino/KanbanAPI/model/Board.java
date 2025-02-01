@@ -12,15 +12,15 @@ import java.util.List;
 @NoArgsConstructor // Construtor padrão
 @AllArgsConstructor // Construtor com todos os argumentos
 @Entity
-@Table(name = "board")
+@Table(name = "frame")
 public class Board {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "nome", nullable = false)
-    private String nome;
+    @Column(name = "name", nullable = false)
+    private String name;
 
     @OneToMany(mappedBy = "board", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private List<Task> tasks;

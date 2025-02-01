@@ -1,4 +1,4 @@
 package br.gustavo.antonino.KanbanAPI.controller;
 
-public class BoardController {
+public class FrameController {
 }
