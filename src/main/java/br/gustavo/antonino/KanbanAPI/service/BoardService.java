@@ -9,11 +9,16 @@ import java.util.List;
 @Service
 public class BoardService {
 
+
+    private BoardRepository boardRepository;
+
     @Autowired
-    private BoardRepository boardRepository; // Injeção automática
+    public BoardService(BoardRepository boardRepository) {
+        this.boardRepository = boardRepository;
+    }
 
     // Busca todos os boards.
-    public List<Board> getAllBoard(){
+    public List<Board> getAllBoards(){
         return boardRepository.findAll();
     }
 
