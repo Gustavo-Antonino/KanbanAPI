@@ -26,13 +26,16 @@ public class TaskService {
     }
 
     // Cria uma nova task dentro de uma coluna específica.
-    public Task createTask(Task task, ColumnStatus status, Long id) {
+    public Task createTask(Task task, ColumnStatus status, Long boardId) {
         // Busca o board pelo ID
-        Board board = boardRepository.findById(id).orElseThrow(() -> new RuntimeException("Board não encontrado"));
+        Board board = boardRepository.findById(boardId).orElseThrow(() -> new RuntimeException("Board não encontrado"));
 
         // Associa o board e o status (coluna) à task
         task.setBoard(board);
         task.setStatus(status);
+
+        // Atualiza a lista de tasks do board
+        board.getTasks().add(task);
 
         // Salva a task no repositório
         return taskRepository.save(task);
