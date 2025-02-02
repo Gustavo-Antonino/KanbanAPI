@@ -35,33 +35,6 @@ O projeto foi construído usando as seguintes tecnologias e dependências:
 
 ---
 
-## Como rodar o projeto? 🚀
-
-1. **Clone o repositório**:
-   ```bash
-   git clone https://github.com/seu-usuario/KanbanAPI.git
-   ```
-
-2. **Navegue até o diretório do projeto**:
-   ```bash
-   cd KanbanAPI
-   ```
-
-3. **Execute o projeto**:
-   ```bash
-   mvn spring-boot:run
-   ```
-
-4. **Acesse a API**:
-   A API estará disponível em `http://localhost:5000`.
-
-5. **Acesse o console do H2** (banco de dados em memória):
-    - URL: `http://localhost:5000/kanban-h2`
-    - Usuário: `sa`
-    - Senha: `password22`
-
----
-
 ## Endpoints da API 🌐
 
 Aqui estão todos os endpoints disponíveis e o que você pode fazer com cada um deles:
