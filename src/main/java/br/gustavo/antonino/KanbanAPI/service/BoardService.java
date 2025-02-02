@@ -32,12 +32,12 @@ public class BoardService {
         return boardRepository.save(board);
     }
 
-    // Deleta o board pelo Id.
+    // Deleta o board com base no Id.
     public void deleteBoardById(Long id){
         boardRepository.deleteById(id);
     }
 
-    // Atualizar o nome de um board com base no seu ID.
+    // Atualiza o nome de um board com base no seu ID.
     public void updateNameBoardById(Long id, String name){
 
         // Busca o Board pelo ID e lança uma exceção caso não seja encontrado.

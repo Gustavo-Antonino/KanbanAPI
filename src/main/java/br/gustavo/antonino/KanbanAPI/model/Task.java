@@ -6,7 +6,6 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 // POJO -> Plain Old Java Object
-@Data // Gera getters, setters, toString, equals e hashCode
 @NoArgsConstructor // Construtor padrão
 @AllArgsConstructor // Construtor com todos os argumentos
 @Entity
@@ -30,4 +29,44 @@ public class Task {
     @ManyToOne
     @JoinColumn(name = "board_id", nullable = false)
     private Board board;
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public ColumnStatus getStatus() {
+        return status;
+    }
+
+    public void setStatus(ColumnStatus status) {
+        this.status = status;
+    }
+
+    public Board getBoard() {
+        return board;
+    }
+
+    public void setBoard(Board board) {
+        this.board = board;
+    }
 }

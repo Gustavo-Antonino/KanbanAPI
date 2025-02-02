@@ -20,15 +20,15 @@ public class TaskService {
     private BoardRepository boardRepository;
 
     @Autowired
-    public TaskService(TaskRepository taskRepository) {
+    public TaskService(TaskRepository taskRepository, BoardRepository boardRepository) {
         this.taskRepository = taskRepository;
+        this.boardRepository = boardRepository;
     }
 
     // Cria uma nova task dentro de uma coluna específica.
     public Task createTask(Task task, ColumnStatus status, Long id) {
         // Busca o board pelo ID
-        Board board = boardRepository.findById(id)
-                .orElseThrow(() -> new RuntimeException("Board não encontrado"));
+        Board board = boardRepository.findById(id).orElseThrow(() -> new RuntimeException("Board não encontrado"));
 
         // Associa o board e o status (coluna) à task
         task.setBoard(board);
@@ -39,9 +39,9 @@ public class TaskService {
     }
 
     // Busca todas as tasks que são relacionadas ao board, organizadas por coluna.
-    public Map<ColumnStatus, List<Task>> getAllTasksByBoard(Long boardId) {
+    public Map<ColumnStatus, List<Task>> getAllTasks(Long id) {
         // Busca todas as tasks relacionadas ao board
-        List<Task> tasks = taskRepository.findByBoardId(boardId);
+        List<Task> tasks = taskRepository.findByBoardId(id);
 
         // Organiza as tasks por status (coluna)
         Map<ColumnStatus, List<Task>> tasksByStatus = new HashMap<>();

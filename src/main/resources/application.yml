@@ -1,1 +1,13 @@
-spring.application.name=KanbanAPI
+spring:
+  application:
+    name: KanbanAPI
+  datasource:
+    url: jdbc:h2:mem:kanban
+    username: sa
+    password: password22
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+  h2:
+    console:
+      enabled: true
+      path: /kanban-h2
